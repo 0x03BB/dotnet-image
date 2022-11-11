@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  dotnet:
+    image: ${DOCKER_REGISTRY}dotnet:${DOCKER_TAG:-latest}
+    build:
+      dockerfile: dotnet/Dockerfile
+      args:
+        - DOCKER_TAG=${DOCKER_TAG:-latest}
+  aspdotnet:
+    image: ${DOCKER_REGISTRY}aspdotnet:${DOCKER_TAG:-latest}
+    build:
+      dockerfile: aspdotnet/Dockerfile
+      args:
+        - DOCKER_TAG=${DOCKER_TAG:-latest}
